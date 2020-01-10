@@ -10,32 +10,36 @@
 </head>
 
 <body>
-    <h1>Daily Journal</h1>
-
+    <header>
+        <h1>Daily Journal</h1>
+    </header>
+    
     <!-- This form is vertically-aligned for fast readability -->
-    <form action="">
-        <fieldset>
-            <label for="journalDate">Date of entry</label>
-            <input type="date" name="journalDate" id="journalDate">
-        </fieldset>
-        <fieldset>
-            <label for="journalConcepts">Concepts covered</label>
-            <input type="text" name="journalConcepts" id="journalConcepts">
-        </fieldset>
-        <fieldset>
-            <label for="journalEntry">Journal Entry</label>
-            <textarea name="journalEntry" id="journalEntry" cols="18" rows="5"></textarea>
-        </fieldset>
-        <fieldset>
-            <label for="journalMood">Mood for the day</label>
-            <select name="journalMood" id="journalMood">
-                <option value="happy">happy</option>
-                <option value="fine">fine</option>
-                <option value="sad">sad</option>
-            </select>
-        </fieldset>
-        <button>Record Journal Entry</button>
-    </form>
+    <div class="container">
+        <form action="">
+            <fieldset>
+                <label for="journalDate">Date of entry</label>
+                <input type="date" name="journalDate" id="journalDate">
+            </fieldset>
+            <fieldset>
+                <label for="journalConcepts">Concepts covered</label>
+                <input type="text" name="journalConcepts" id="journalConcepts">
+            </fieldset>
+            <fieldset>
+                <label for="journalEntry">Journal Entry</label>
+                <textarea name="journalEntry" id="journalEntry" cols="18" rows="5"></textarea>
+            </fieldset>
+            <fieldset>
+                <label for="journalMood">Mood for the day</label>
+                <select name="journalMood" id="journalMood">
+                    <option value="happy">happy</option>
+                    <option value="fine">fine</option>
+                    <option value="sad">sad</option>
+                </select>
+            </fieldset>
+            <button>Record Journal Entry</button>
+        </form>
+    </div>
 </body>
 
 </html>

@@ -1,8 +1,41 @@
+body {
+    max-width: 900px;;
+}
+header {
+    text-align: center;
+    opacity: 75%;
+    border: 1px solid red;
+    background: linear-gradient(90deg, rgba(11,4,125,1) 0%, rgba(8,98,172,1) 50%, rgba(11,157,187,1) 100%);
+}
 fieldset {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    border: 2px solid #0862ac;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px grey;
+    background-color: gray;
+    opacity: 75%;
+}
+input {
+    border-radius: 5px;
+}
+textarea {
+    border-radius: 5px;
 }
 label {
     margin-bottom: 2px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid red;
+}
+.container {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    background-image: url("../images/sunrise-612x612.jpg");
 }
