@@ -27,11 +27,6 @@ const makeJournalEntryComponent = (journalEntry) => {
     `
 };
 
-// for (let i = 0; i < journalEntries.length; i++) {
-//     const entries = makeJournalEntryComponent(journalEntries[i]);
-//     console.log(entries);
-// }
-
 const containerEl = document.querySelector(".entryLog");
 
 const renderJournalEntries = (entries) => {
