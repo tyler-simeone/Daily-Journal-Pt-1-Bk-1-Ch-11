@@ -13,3 +13,5 @@ const DOM = {
         containerEl.innerHTML += jsonData;
     }
 }
+
+export default DOM
