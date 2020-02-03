@@ -29,16 +29,16 @@ const FACTORY = {
         const conceptsEl = document.querySelector("#journalConcepts").value;
         const entryEl = document.querySelector("#journalEntry").value;
         const moodEl = document.querySelector("#journalMood").value;
-        // if (date || concepts || entry || mood === null || "") {
-        //     window.alert("Please enter a value");
-        // } else {
+        if (dateEl === "" || conceptsEl === "" || entryEl === "") {
+            window.alert("Please enter a value");
+        } else {
             return {
                 "date": dateEl,
                 "concepts": conceptsEl,
                 "entry": entryEl,
                 "mood": moodEl
             }
-        // }
+        }
     }
 }
 
