@@ -1,5 +1,5 @@
 import API from "./data.js"
-import HTML from "./entryComponent.js"
+import { FACTORY , HTML } from "./entryComponent.js";
 import DOM from "./entriesDOM.js"
 
 /*
@@ -13,3 +13,10 @@ API.getJournalEntries().then(parsedResp => {
         DOM.renderJournalEntries(entryAsHTML);
     })
 });
+
+const btn = document.querySelector("#save-entry");
+btn.addEventListener("click", () => API.saveJournalEntry(FACTORY.createEntry()))
+
+// Now createEntry is actually running thanks to '()'! 
+// And the () => made code only execute when btn is clicked not on
+//  page reload.
