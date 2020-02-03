@@ -1,5 +1,5 @@
 import API from "./data.js"
-import HTML from "./entryComponent.js"
+import { FACTORY , HTML } from "./entryComponent.js";
 import DOM from "./entriesDOM.js"
 
 /*
@@ -14,35 +14,9 @@ API.getJournalEntries().then(parsedResp => {
     })
 });
 
-
-// NEED TO FIGURE OUT WHERE TO PUT ALL THIS CODE... ONLY SHOULD BE 
-// CALLING THE INITIATER OF THIS SEQUENCE IN THIS FILE.
-// VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-
-// Posting user input to DOM...
-
 const btn = document.querySelector("#save-entry");
-btn.addEventListener("click", )
+btn.addEventListener("click", () => API.saveJournalEntry(FACTORY.createEntry()))
 
-const date = document.querySelector("#journalDate").value;
-const concepts = document.querySelector("#journalConcepts").value;
-const entry = document.querySelector("#journalEntry").value;
-const mood = document.querySelector("#journalMood").value;
-
-if (date || concepts || entry || mood === null || "") {
-    window.prompt("Please enter a value");
-}
-
-const createEntry = (id, date, concepts, entry, mood) => {
-    return {
-        "id": id,
-        "date": date,
-        "concepts": concepts,
-        "entry": entry,
-        "mood": mood
-    }
-}
-
-const newJournalEntry = createEntry(date, concepts, entry, mood);
-
-export default newJournalEntry
+// Now createEntry is actually running thanks to '()'! 
+// And the () => made code only execute when btn is clicked not on
+//  page reload.
