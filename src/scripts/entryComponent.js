@@ -1,11 +1,9 @@
 /* 
     This is strictly 'Helper' code. It is not this file's 
     responsibility to execute the code. 
-    
-    Holds the piece that creates the DOM component that will hold
-    the JSON data object's values.
 */
 
+// Making DOM component to get json obj data onto page
 const HTML = {
     makeJournalEntryComponent(journalEntry) {
         return `
@@ -16,13 +14,7 @@ const HTML = {
     }
 }
 
-
-
-/*
-    Posting user input to DOM...
-*/
-
-
+// Making object to be posted to json DB w/ values of user inp
 const FACTORY = {
     createEntry() {
         const dateEl = document.querySelector("#journalDate").value;

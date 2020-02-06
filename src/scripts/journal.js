@@ -14,9 +14,10 @@ API.getJournalEntries().then(parsedResp => {
     })
 });
 
+// Posting user inp data to DB
 const btn = document.querySelector("#save-entry");
 btn.addEventListener("click", () => API.saveJournalEntry(FACTORY.createEntry()))
 
 // Now createEntry is actually running thanks to '()'! 
 // And the () => made code only execute when btn is clicked not on
-//  page reload.
+// page reload.

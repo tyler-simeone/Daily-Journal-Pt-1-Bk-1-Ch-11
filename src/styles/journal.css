@@ -49,6 +49,19 @@ form {
     background-image: url("../images/sunrise-612x612.jpg");
     background-size: 100% 100%;
 }
+#radioBtns {
+    /* display: flex; */
+    display: inline;
+}
+input.radio {
+    margin-left: 5px;
+}
+legend {
+    background-color: #0862ac;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 .entryLog {
     margin-left: 30px;
     color: white;
