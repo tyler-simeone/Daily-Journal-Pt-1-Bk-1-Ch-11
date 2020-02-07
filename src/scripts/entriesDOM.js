@@ -6,10 +6,11 @@
     make the JSON data visible.
 */
 
-const containerEl = document.querySelector(".entryLog");
+export const containerEl = document.querySelector(".entryLog");
 
 const DOM = {
     renderJournalEntries(jsonData) {
+        containerEl.innerHTML = "";
         containerEl.innerHTML += jsonData;
     }
 }

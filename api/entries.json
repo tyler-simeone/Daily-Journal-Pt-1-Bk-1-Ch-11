@@ -8,13 +8,6 @@
       "mood": "happy"
     },
     {
-      "id": 2,
-      "date": "2020-01-19",
-      "concepts": "Accessing nested data in objects",
-      "entry": "In this exercise we learned how to access deeply-nested data by chaining properties and array-index selectors to obtain the correct location in the data structure.",
-      "mood": "happy"
-    },
-    {
       "id": 3,
       "date": "2020-01-19",
       "concepts": "Git workflow",
@@ -29,20 +22,24 @@
       "id": 4
     },
     {
-      "date": "2020-02-03",
-      "concepts": "Posting data to database.",
-      "entry": "It was mostly just some missing parens in my event listener that was causing the issues.",
-      "mood": "happy",
+      "date": "2020-02-12",
+      "concepts": "DWDWd",
+      "entry": "afafawfafw",
+      "mood": "fine",
       "id": 5
     },
     {
-      "date": "2020-02-03",
-      "concepts": "Input Validation Part 1",
-      "entry": "Inserting an if () statement into factory function that will prompt user if any of the inputs are empty. ",
-      "mood": "happy",
+      "date": "2020-02-07",
+      "concepts": "Posting data to database.FW",
+      "entry": "wWdd",
+      "mood": "sad",
       "id": 6
     },
     {
+      "date": "2020-02-06",
+      "concepts": "DWDWd",
+      "entry": "feeeee eeeeeee ee",
+      "mood": "sad",
       "id": 7
     }
   ]

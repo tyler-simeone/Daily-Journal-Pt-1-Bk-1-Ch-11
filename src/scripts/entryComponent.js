@@ -34,4 +34,5 @@ const FACTORY = {
     }
 }
 
+export default HTML
 export { FACTORY, HTML };
