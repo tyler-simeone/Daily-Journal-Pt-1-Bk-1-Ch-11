@@ -1,8 +1,3 @@
-/* 
-    This is strictly 'Helper' code. It is not this file's 
-    responsibility to execute the code. 
-*/
-
 // Making DOM component to get json obj data onto page
 const HTML = {
     makeJournalEntryComponent(journalEntry) {
@@ -14,7 +9,7 @@ const HTML = {
     }
 }
 
-// Making object to be posted to json DB w/ values of user inp
+// Making object to be POSTed to json DB w/ values of user inp
 const FACTORY = {
     createEntry() {
         const dateEl = document.querySelector("#journalDate").value;
@@ -33,6 +28,4 @@ const FACTORY = {
         }
     }
 }
-
-export default HTML
-export { FACTORY, HTML };
+export {FACTORY, HTML}

@@ -41,6 +41,13 @@
       "entry": "feeeee eeeeeee ee",
       "mood": "sad",
       "id": 7
+    },
+    {
+      "date": "2020-02-08",
+      "concepts": "I got the filtered data display working!",
+      "entry": "This morning right after I woke up I was able to quickly fix what I was having so much trouble with yesterday. First I had to fix my import syntax to match my exports. Then I had to import the container element that holds the JSON data on the DOM correctly (not as one feature but in a list in {}. Then, in the click event for each mood-filtering button, before I ran the method that display the JSON data to the DOM I reset my container element to an empty string, so that each time a btn is clicked the container would empty itself and then display the corresponding data.",
+      "mood": "happy",
+      "id": 8
     }
   ]
 }
