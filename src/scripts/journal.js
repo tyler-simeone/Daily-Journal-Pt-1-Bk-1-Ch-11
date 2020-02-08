@@ -19,7 +19,7 @@ API.getJournalEntries().then(r => {
 const btn = document.querySelector("#save-entry");
 btn.addEventListener("click", () => API.saveJournalEntry(FACTORY.createEntry()))
 
-// DELETE req (not resetting on new btn click.. just appending to existing data)
+// DELETE req
 const moods = document.getElementsByName("moods")
 
 moods.forEach(el => {
