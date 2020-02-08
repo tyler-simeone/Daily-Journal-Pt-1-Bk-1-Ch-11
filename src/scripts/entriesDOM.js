@@ -6,5 +6,4 @@ const DOM = {
     }
 } 
 
-// export default DOM
 export {DOM, containerEl}
