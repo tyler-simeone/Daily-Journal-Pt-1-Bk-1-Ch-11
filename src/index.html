@@ -39,10 +39,17 @@
                 </select>
             </fieldset>
             <button id="save-entry">Record Journal Entry</button>
+            <fieldset id="radioBtns">
+                <legend>Filter Entries by Mood</legend>
+                <input type="radio" name="moods" value="happy" class="radio1">
+                <label for="happy">Happy</label>
+                <input type="radio" name="moods" value="fine" class="radio2">
+                <label for="fine">Fine</label>
+                <input type="radio" name="moods" value="sad" class="radio3">
+                <label for="sad">Sad</label>
+            </fieldset>
         </form>
-        <article class="entryLog">
-            
-        </article>
+        <article class="entryLog"></article>
     </div>
     <script type="module" src="scripts/journal.js"></script>
 </body>
