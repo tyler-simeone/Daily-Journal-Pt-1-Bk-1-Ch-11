@@ -38,11 +38,13 @@ moods.forEach(el => {
 // DELETE req
 containerEl.addEventListener("click", event => {
     if (event.target.id.startsWith("deleteBtn--")) {
-        const idToDelete = event.target.id.split("--")[1]
+        const entryToDelete = event.target.id.split("--")[1]
 
-        API.rmJournalEntry(idToDelete)
+        API.rmJournalEntry(entryToDelete)
             .then(API.getJournalEntries)
             .then(resp => {
+                containerEl.innerHTML = ""
+                
                 resp.forEach(entry => {
                     const entryAsHtml = HTML.makeJournalEntryComponent(entry)
                     DOM.renderJournalEntries(entryAsHtml)
