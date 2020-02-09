@@ -2,9 +2,14 @@
 const HTML = {
     makeJournalEntryComponent(journalEntry) {
         return `
-            <h2>${journalEntry.concepts}</h2>
-            <p>${journalEntry.entry}</p>
-            <p>${journalEntry.date}</p>
+            <section id="${journalEntry.id}">
+                <h2>${journalEntry.concepts}</h2>
+                <p>${journalEntry.entry}</p>
+                <p>${journalEntry.date}</p>
+                <button id="deleteBtn--${journalEntry.id}">
+                    Delete
+                </button>
+            </section>
         `
     }
 }
