@@ -19,7 +19,7 @@ API.getJournalEntries().then(r => {
 const btn = document.querySelector("#save-entry");
 btn.addEventListener("click", () => API.saveJournalEntry(FACTORY.createEntry()))
 
-// DELETE req
+// Filtering data
 const moods = document.getElementsByName("moods")
 
 moods.forEach(el => {
@@ -33,4 +33,20 @@ moods.forEach(el => {
             }
         }))
     })
+})
+
+// DELETE req
+containerEl.addEventListener("click", event => {
+    if (event.target.id.startsWith("deleteBtn--")) {
+        const idToDelete = event.target.id.split("--")[1]
+
+        API.rmJournalEntry(idToDelete)
+            .then(API.getJournalEntries)
+            .then(resp => {
+                resp.forEach(entry => {
+                    const entryAsHtml = HTML.makeJournalEntryComponent(entry)
+                    DOM.renderJournalEntries(entryAsHtml)
+                })
+            })
+    }
 })
