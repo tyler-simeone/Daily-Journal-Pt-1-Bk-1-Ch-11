@@ -1,16 +1,16 @@
 {
   "entries": [
     {
-      "date": "",
-      "concepts": "",
-      "entry": "",
+      "date": "2020-02-10",
+      "concepts": "Editing data in database.",
+      "entry": "Practicing editing data in database.",
       "mood": "happy",
       "id": 1
     },
     {
-      "date": "",
-      "concepts": "",
-      "entry": "",
+      "date": "2020-01-19",
+      "concepts": "Data collection with objects",
+      "entry": "In this exercise we covered how to record data input using objects and their properties.",
       "mood": "happy",
       "id": 4
     },
@@ -20,13 +20,6 @@
       "entry": "Kristen helped me fix some syntax issues so that user input would get posted to the DB.",
       "mood": "happy",
       "id": 5
-    },
-    {
-      "date": "2020-02-03",
-      "concepts": "Posting data to database.",
-      "entry": "Kristen helped me fix some syntax issues so that user input would get posted to the DB.",
-      "mood": "happy",
-      "id": 6
     },
     {
       "date": "2020-02-06",
@@ -48,6 +41,13 @@
       "entry": "Just learned that if I start json-server before starting the http-server I will get errors on page load. Need to start http-server first always!",
       "mood": "fine",
       "id": 9
+    },
+    {
+      "date": "2020-02-10",
+      "concepts": "Editing data in database.",
+      "entry": "Practicing editing data in database.",
+      "mood": "happy",
+      "id": 10
     }
   ]
 }

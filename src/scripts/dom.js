@@ -25,12 +25,6 @@ const DOM = {
         const entry = document.querySelector("#journalEntry")
         const mood = document.querySelector("#journalMood")
 
-        hiddenID.value = ""
-        date.value = ""
-        concepts.value = ""
-        entry.innerHTML = ""
-        mood.value = ""
-
         hiddenID.value = obj.id
         date.value = obj.date
         concepts.value = obj.concepts

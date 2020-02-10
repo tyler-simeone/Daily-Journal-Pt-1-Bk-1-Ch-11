@@ -65,18 +65,37 @@ containerEl.addEventListener("click", event => {
 })
 
 // EDIT req
+// ... Almost there.. the callback fn is repopulating the user interface to be edited, and the updated
+// entry is replacing the original, BUT... It's also appending a new object to the DB.. I KNOW WHY!
+// ... The save btn is running both the editJournalEntry method as well as the saveJournalEntry...
+// It can't differentiate with current code. This is where that hidden text input comes in.. 
+// That hidden input will have a value if in edit mode (thanks to DOM.journalEntriesEdit)..
+// But if posting a new entry that DOM method won't be invoked so hidden input will have no value,
+// That's how you differentiate!
 containerEl.addEventListener("click", event => {
     if (event.target.id.startsWith("editBtn")) {
         // Holds the same ID as the whole section container.. 
         const toEdit = event.target.id.split("--")[1]
 
-        // Need to repopulate user interface to edit the section...
-        // .. So it's working, but when interface is repopulated the 
-        // entry is removed from the container..
+        // Repopulate user interface to edit the section
+        // ... So if I click edit btn, the interface is repopulated,
+        // but when pg is refreshed, the data from that entry is still
+        // being emptied from the DB
         API.getJournalEntry(toEdit)
             .then(resp => DOM.journalEntriesEdit(resp))
-            .then(API.getJournalEntries)
 
-        API.editJournalEntry(toEdit)
+        const hiddenInp = document.querySelector("#entryId")
+
+        if (hiddenInp.value !== "") {
+            const saveBtn = document.querySelector("#save-entry")
+            saveBtn.addEventListener("click", () => {
+                API.editJournalEntry(toEdit)
+        })
+        } else {
+            // Just need to figure out which obj to pass in to save to DB. 
+            API.saveJournalEntry()
+        }
+
+        
     }
 })
