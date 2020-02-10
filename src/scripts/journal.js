@@ -1,4 +1,4 @@
-import API from "./data.js"
+import API from "./api.js"
 import {FACTORY, HTML} from "./factory.js"
 import {DOM, containerEl} from "./dom.js"
 
@@ -8,11 +8,15 @@ import {DOM, containerEl} from "./dom.js"
 */
 
 // DISPLAY ALL
-API.getJournalEntries().then(r => {
-    r.forEach(entry => {
-        const entryAsHtml = HTML.makeJournalEntryComponent(entry)
-        DOM.renderJournalEntries(entryAsHtml)
-    })
+// API.getJournalEntries().then(r => {
+//     r.forEach(entry => {
+//         const entryAsHtml = HTML.makeJournalEntryComponent(entry)
+//         DOM.renderJournalEntries(entryAsHtml)
+//     })
+// })
+
+API.getJournalEntries().then(resp => {
+    DOM.renderJournalEntries(resp)
 })
 
 // POST req
@@ -34,8 +38,7 @@ moods.forEach(el => {
 
                 API.getJournalEntry(entry.id) 
                     .then(resp => {
-                        const entryAsHtml = HTML.makeJournalEntryComponent(resp)
-                        DOM.renderJournalEntries(entryAsHtml)
+                        DOM.renderSingleEntry(resp)
                     })               
             }
         }))
@@ -55,8 +58,7 @@ containerEl.addEventListener("click", event => {
                 containerEl.innerHTML = ""
                 
                 resp.forEach(entry => {
-                    const entryAsHtml = HTML.makeJournalEntryComponent(entry)
-                    DOM.renderJournalEntries(entryAsHtml)
+                    DOM.renderSingleEntry(entry)
                 })
             })
     }
@@ -65,9 +67,15 @@ containerEl.addEventListener("click", event => {
 // EDIT req
 containerEl.addEventListener("click", event => {
     if (event.target.id.startsWith("editBtn")) {
+        // Holds the same ID as the whole section container.. 
         const toEdit = event.target.id.split("--")[1]
 
-        DOM.journalEntriesEdit()
+        // Need to repopulate user interface to edit the section...
+        // .. So it's working, but when interface is repopulated the 
+        // entry is removed from the container..
+        API.getJournalEntry(toEdit)
+            .then(resp => DOM.journalEntriesEdit(resp))
+            .then(API.getJournalEntries)
 
         API.editJournalEntry(toEdit)
     }

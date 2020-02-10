@@ -15,10 +15,6 @@ const API = {
     getJournalEntry(id) {
         return fetch(`http://localhost:8088/entries/${id}`)
             .then(resp => resp.json())
-            .then(entry => {
-                const entryAsHtml = HTML.makeJournalEntryComponent(entry)
-                DOM.renderJournalEntries(entryAsHtml)
-            })
             
     },
     saveJournalEntry (obj) {
@@ -30,12 +26,15 @@ const API = {
             body: JSON.stringify(obj)
         }).then(r=>r.json())
     },
-    rmJournalEntry(recipeId) {
-        return fetch(`http://localhost:8088/entries/${recipeId}`, {
+    rmJournalEntry(entryId) {
+        return fetch(`http://localhost:8088/entries/${entryId}`, {
             method: "DELETE"  
         }).then(resp => resp.json())
     },
-    editJournalEntry(recipeId) {
+    // This method gets the updated values in the user interface, saves to a new
+    // obj, then fetches DB obj via passed-in ID and replaces it with updated vals
+    // from our new obj .... we want this to happen when 'record entry' btn clicked
+    editJournalEntry(entryId) {
         const updatedObj = {
             date: document.querySelector("#journalDate").value,
             concepts: document.querySelector("#journalConcepts").value,
@@ -43,7 +42,7 @@ const API = {
             mood: document.querySelector("#journalMood").value
         }
 
-        return fetch(`http://localhost:8088/entries/${recipeId}`, {
+        return fetch(`http://localhost:8088/entries/${entryId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
