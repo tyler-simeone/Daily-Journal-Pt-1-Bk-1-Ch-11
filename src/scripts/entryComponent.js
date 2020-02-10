@@ -6,9 +6,14 @@ const HTML = {
                 <h2>${journalEntry.concepts}</h2>
                 <p>${journalEntry.entry}</p>
                 <p>${journalEntry.date}</p>
-                <button id="deleteBtn--${journalEntry.id}">
-                    Delete
-                </button>
+                <div id="btnContainer">
+                    <button id="editBtn--${journalEntry.id}">
+                        Edit
+                    </button>
+                    <button id="deleteBtn--${journalEntry.id}">
+                        Delete
+                    </button>
+                </div>
             </section>
         `
     }

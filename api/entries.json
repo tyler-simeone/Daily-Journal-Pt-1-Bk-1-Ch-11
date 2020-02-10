@@ -8,13 +8,6 @@
       "mood": "happy"
     },
     {
-      "id": 3,
-      "date": "2020-01-19",
-      "concepts": "Git workflow",
-      "entry": "In this exercise we covered how to use git and github to save versions of our codebase to the github cloud, so that we won't lose our hard work and so that we have a reference to previous code versions if we need them.",
-      "mood": "happy"
-    },
-    {
       "date": "2020-02-03",
       "concepts": "Posting data to database.",
       "entry": "Kristen helped me fix some syntax issues so that user input would get posted to the DB.",

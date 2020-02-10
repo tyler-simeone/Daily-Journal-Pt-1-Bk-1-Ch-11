@@ -5,6 +5,15 @@ const containerEl = document.querySelector(".entryLog");
 const DOM = {
     renderJournalEntries(jsonData) {
         containerEl.innerHTML += jsonData;
+    },
+    journalEntriesEdit() {
+        const hiddenID = document.querySelector("#recipeId").value
+        const date = document.querySelector("#journalDate").value
+        const concepts = document.querySelector("#journalConcepts").value
+        const entry = document.querySelector("#journalEntry").value
+        const mood = document.querySelector("#journalMood").value
+
+        
     }
 } 
 

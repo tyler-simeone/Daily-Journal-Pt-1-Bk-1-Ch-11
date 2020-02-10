@@ -34,6 +34,24 @@ const API = {
         return fetch(`http://localhost:8088/entries/${recipeId}`, {
             method: "DELETE"  
         }).then(resp => resp.json())
+    },
+    editJournalEntry(recipeId) {
+        const updatedObj = {
+            date: document.querySelector("#journalDate").value,
+            concepts: document.querySelector("#journalConcepts").value,
+            entry: document.querySelector("#journalEntry").value,
+            mood: document.querySelector("#journalMood").value
+        }
+
+        return fetch(`http://localhost:8088/entries/${recipeId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedObj)
+        })
+            .then(resp => resp.json())
+            
     }
 }
 

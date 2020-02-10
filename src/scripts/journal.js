@@ -52,3 +52,12 @@ containerEl.addEventListener("click", event => {
             })
     }
 })
+
+// EDIT req
+containerEl.addEventListener("click", event => {
+    if (event.target.id.startsWith("editBtn")) {
+        const toEdit = event.target.id.split("--")[1]
+
+        API.editJournalEntry(toEdit)
+    }
+})

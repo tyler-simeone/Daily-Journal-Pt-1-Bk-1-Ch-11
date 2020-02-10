@@ -76,3 +76,8 @@ button {
     max-width: 100px;
     margin-left: 100px;
 }
+/* TODO: Figure out why I can't move position for edit/delete buttons */
+/* #btnContainer {
+    display: flex;
+    justify-content: space-evenly;
+} */
