@@ -6,14 +6,20 @@ const DOM = {
     renderJournalEntries(jsonData) {
         containerEl.innerHTML += jsonData;
     },
-    journalEntriesEdit() {
-        const hiddenID = document.querySelector("#recipeId").value
-        const date = document.querySelector("#journalDate").value
-        const concepts = document.querySelector("#journalConcepts").value
-        const entry = document.querySelector("#journalEntry").value
-        const mood = document.querySelector("#journalMood").value
+    // Accesses all form input elements and then adds properties of passed-in obj to them
+    // This runs when edit btn is clicked.
+    journalEntriesEdit(obj) {
+        const hiddenID = document.querySelector("#recipeId")
+        const date = document.querySelector("#journalDate")
+        const concepts = document.querySelector("#journalConcepts")
+        const entry = document.querySelector("#journalEntry")
+        const mood = document.querySelector("#journalMood")
 
-        
+        hiddenID.value = obj.id
+        date.value = obj.date
+        concepts.value = obj.concepts
+        entry.innerHTML = obj.entry
+        mood.value = obj.mood
     }
 } 
 

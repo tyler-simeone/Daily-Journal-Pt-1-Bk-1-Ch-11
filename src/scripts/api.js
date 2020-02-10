@@ -12,7 +12,7 @@ const API = {
         return fetch("http://localhost:8088/entries")
             .then(response => response.json())
     },
-    getSomeJournalEntries(id) {
+    getJournalEntry(id) {
         return fetch(`http://localhost:8088/entries/${id}`)
             .then(resp => resp.json())
             .then(entry => {
