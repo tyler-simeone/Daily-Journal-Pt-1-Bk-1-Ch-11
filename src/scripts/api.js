@@ -1,5 +1,5 @@
-import {FACTORY, HTML} from "./entryComponent.js"
-import {DOM, containerEl} from "./entriesDOM.js"
+import {FACTORY, HTML} from "./factory.js"
+import {DOM, containerEl} from "./dom.js"
 
 /* 
     This is strictly 'Helper' code. It is not this file's 

@@ -1,6 +1,6 @@
 import API from "./data.js"
 import {FACTORY, HTML} from "./entryComponent.js"
-import {DOM, containerEl} from "./entriesDOM.js"
+import {DOM, containerEl} from "./dom.js"
 
 /*
     Main application logic that uses the functions and objects
