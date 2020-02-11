@@ -19,7 +19,7 @@ const DOM = {
     // Accesses all form input elements and then adds properties of passed-in obj to them
     // This runs when edit btn is clicked.
     journalEntriesEdit(obj) {
-        const hiddenID = document.querySelector("#recipeId")
+        const hiddenID = document.querySelector("#entryId")
         const date = document.querySelector("#journalDate")
         const concepts = document.querySelector("#journalConcepts")
         const entry = document.querySelector("#journalEntry")

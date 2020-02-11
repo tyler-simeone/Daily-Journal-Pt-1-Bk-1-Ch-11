@@ -34,7 +34,8 @@ const API = {
     // This method gets the updated values in the user interface, saves to a new
     // obj, then fetches DB obj via passed-in ID and replaces it with updated vals
     // from our new obj .... we want this to happen when 'record entry' btn clicked
-    editJournalEntry(entryId) {        
+    editJournalEntry(entryId) {   
+        // So i believe FACTORY.createEntry() already does this. Check later. Can clean this up if so.
         const updatedObj = {
             date: document.querySelector("#journalDate").value,
             concepts: document.querySelector("#journalConcepts").value,

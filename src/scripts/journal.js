@@ -5,23 +5,28 @@ import {DOM, containerEl} from "./dom.js"
 /*
     Main application logic that uses the functions and objects
     defined in the other JavaScript files.
+
+    TODO: (Refactor main once all reqs have been met to simplify and clean up)
 */
 
 // DISPLAY ALL
-// API.getJournalEntries().then(r => {
-//     r.forEach(entry => {
-//         const entryAsHtml = HTML.makeJournalEntryComponent(entry)
-//         DOM.renderJournalEntries(entryAsHtml)
-//     })
-// })
-
 API.getJournalEntries().then(resp => {
     DOM.renderJournalEntries(resp)
 })
 
-// POST req
+// POST req to work with edit btn click
 const btn = document.querySelector("#save-entry");
-btn.addEventListener("click", () => API.saveJournalEntry(FACTORY.createEntry()))
+const hiddenEntry = document.querySelector("#entryId");
+const saveButtonClick = (postToEdit) => {
+    btn.addEventListener("click", () => {
+        if (hiddenEntry.value !== "") {
+            API.editJournalEntry(postToEdit)
+        } else {
+            API.saveJournalEntry(FACTORY.createEntry())
+        }
+    })
+}
+saveButtonClick();
 
 // Filtering data
 const moods = document.getElementsByName("moods")
@@ -45,7 +50,7 @@ moods.forEach(el => {
     })
 })
 
-// DELETE req
+// DELETE req 
 containerEl.addEventListener("click", event => {
     if (event.target.id.startsWith("deleteBtn--")) {
         // This delete btn's ID matches the whole container section's ID
@@ -80,22 +85,14 @@ containerEl.addEventListener("click", event => {
         // Repopulate user interface to edit the section
         // ... So if I click edit btn, the interface is repopulated,
         // but when pg is refreshed, the data from that entry is still
-        // being emptied from the DB
+        // being emptied from the DB 
         API.getJournalEntry(toEdit)
             .then(resp => DOM.journalEntriesEdit(resp))
 
-        const hiddenInp = document.querySelector("#entryId")
-
-        if (hiddenInp.value !== "") {
-            const saveBtn = document.querySelector("#save-entry")
-            saveBtn.addEventListener("click", () => {
-                API.editJournalEntry(toEdit)
-        })
-        } else {
-            // Just need to figure out which obj to pass in to save to DB. 
-            API.saveJournalEntry()
-        }
-
-        
+        // Attempt #3 -- this worked! Needed to run POST req in main, and PUT req
+        // in this EL, while differentiating between POST & PUT.. Only way to do this
+        // was to make a func in global namespace with the conditionals there, then 
+        // call that function here when in edit mode.... BOOM!
+        saveButtonClick(toEdit);
     }
 })
