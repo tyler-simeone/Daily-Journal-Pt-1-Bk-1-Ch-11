@@ -50,7 +50,6 @@ form {
     background-size: 100% 100%;
 }
 #radioBtns {
-    /* display: flex; */
     display: inline;
 }
 input.radio1, input.radio2, input.radio3 {
@@ -66,18 +65,61 @@ legend {
     margin-left: 30px;
     color: white;
     width: 300px;
-    height: 550px;
+    height: 500px;
     overflow: scroll;
+    margin-top: 35px;
     margin-bottom: 30px;
-    background-color: rgba(0,0,0, .33);
-    padding-left: 15px;
+    background-color: rgba(0,0,0, .70);
+    padding: 0 15px 15px 15px;
+    border: 2px solid #0862ac;
+    border-radius: 5px;
 }
-button {
-    max-width: 100px;
-    margin-left: 100px;
+.saveEntry__btn {
+    max-width: 200px;
+    margin: 15px 0 0 45px;
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: .5px;
+    font-weight: bold;
+}
+.saveEntry__btn:hover {
+    background-color: #0862ac;
+    border: 2px solid #fafafa;
+    color: white;
 }
 /* TODO: Figure out why I can't move position for edit/delete buttons */
-/* #btnContainer {
+.dynamicBtn__container {
     display: flex;
-    justify-content: space-evenly;
-} */
+    justify-content: space-around;
+}
+.deleteBtn {
+    margin-left: 5px;
+    margin-right: 210px;
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+.deleteBtn:hover {
+    background-color: #0862ac;
+    border: 2px solid #fafafa;
+    color: white;
+}
+.editBtn {
+    border-radius: 3px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .5px;
+    font-weight: bold;
+}
+.editBtn:hover {
+    background-color: #0862ac;
+    border: 2px solid #fafafa;
+    color: white;
+}
+.dynamicContent__container {
+    padding: 0 0 15px 0;
+    border-bottom: 2px solid grey;
+}
+.dynamicContent__container:last-of-type {
+    border-bottom: none;
+}

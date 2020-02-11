@@ -2,15 +2,15 @@
 const HTML = {
     makeJournalEntryComponent(journalEntry) {
         return `
-            <section id="${journalEntry.id}">
+            <section id="${journalEntry.id}" class="dynamicContent__container">
                 <h2>${journalEntry.concepts}</h2>
                 <p>${journalEntry.entry}</p>
                 <p>${journalEntry.date}</p>
-                <div id="btnContainer">
-                    <button id="editBtn--${journalEntry.id}">
+                <div id="btnContainer" class="dynamicBtn__container">
+                    <button id="editBtn--${journalEntry.id}" class="editBtn">
                         Edit
                     </button>
-                    <button id="deleteBtn--${journalEntry.id}">
+                    <button id="deleteBtn--${journalEntry.id}" class="deleteBtn">
                         Delete
                     </button>
                 </div>
@@ -27,6 +27,7 @@ const FACTORY = {
         const entryEl = document.querySelector("#journalEntry").value;
         const moodEl = document.querySelector("#journalMood").value;
         if (dateEl === "" || conceptsEl === "" || entryEl === "") {
+            event.preventDefault()
             window.alert("Please enter a value");
         } else {
             return {
