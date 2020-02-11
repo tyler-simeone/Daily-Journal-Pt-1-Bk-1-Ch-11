@@ -20,8 +20,8 @@ API.getJournalEntries().then(resp => {
 })
 
 // POST req
-const btn = document.querySelector("#save-entry");
-btn.addEventListener("click", () => API.saveJournalEntry(FACTORY.createEntry()))
+// const btn = document.querySelector("#save-entry");
+// btn.addEventListener("click", () => API.saveJournalEntry(FACTORY.createEntry()))
 
 // Filtering data
 const moods = document.getElementsByName("moods")
@@ -86,15 +86,19 @@ containerEl.addEventListener("click", event => {
 
         const hiddenInp = document.querySelector("#entryId")
 
+        // OK, so when I commented out the POST event listener, the updated content
+        // is now not getting added to DB at all, which tells me that save btn click event
+        // in this code block is not running the fetch PUT for some reason...
         if (hiddenInp.value !== "") {
             const saveBtn = document.querySelector("#save-entry")
             saveBtn.addEventListener("click", () => {
                 API.editJournalEntry(toEdit)
         })
-        } else {
-            // Just need to figure out which obj to pass in to save to DB. 
-            API.saveJournalEntry()
-        }
+        } 
+        // else {
+        //     // Just need to figure out which obj to pass in to save to DB. 
+        //     API.saveJournalEntry()
+        // }
 
         
     }

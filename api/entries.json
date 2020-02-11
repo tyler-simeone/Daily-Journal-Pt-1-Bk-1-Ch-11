@@ -48,6 +48,13 @@
       "entry": "Practicing editing data in database.",
       "mood": "happy",
       "id": 10
+    },
+    {
+      "date": "2020-02-11",
+      "concepts": "Editing data in database.",
+      "entry": "Trying to update save btn functionality depending on if editing existing entry or creating a new entry.",
+      "mood": "fine",
+      "id": 14
     }
   ]
 }
