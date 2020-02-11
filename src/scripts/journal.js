@@ -96,7 +96,7 @@ searchBar.addEventListener("keypress", event => {
         API.getJournalEntries()
             .then(resp => {
                 resp.filter(entry => {
-                    if (entry.includes(searchVal) === true) {
+                    if (entry.contains(searchVal)) {
                         containerEl.innerHTML = entry
                     }
                 })
