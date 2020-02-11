@@ -96,10 +96,14 @@ searchBar.addEventListener("keypress", event => {
         API.getJournalEntries()
             .then(resp => {
                 resp.filter(entry => {
-                    if (entry.contains(searchVal)) {
+                    if (entry.includes(searchVal)) {
                         containerEl.innerHTML = entry
                     }
                 })
             })
     }
 })
+
+
+// TODO: Coding challenge 1: change save btn to update journal entry when in edit mode and change back 
+// to record journal entry after update has been sent, 2: when delete btn clicked display alert
