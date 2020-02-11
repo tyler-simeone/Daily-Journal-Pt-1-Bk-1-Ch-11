@@ -1,13 +1,6 @@
 {
   "entries": [
     {
-      "date": "2020-02-10",
-      "concepts": "Editing data in database.",
-      "entry": "Practicing editing data in database.",
-      "mood": "happy",
-      "id": 1
-    },
-    {
       "date": "2020-01-19",
       "concepts": "Data collection with objects",
       "entry": "In this exercise we covered how to record data input using objects and their properties.",
@@ -22,10 +15,10 @@
       "id": 5
     },
     {
-      "date": "2020-02-06",
-      "concepts": "DWDWd",
-      "entry": "feeeee eeeeeee ee",
-      "mood": "sad",
+      "date": "2020-02-11",
+      "concepts": "Editing data in database part 3.",
+      "entry": "Changing nested save btn event listener syntax as original code was not being read.",
+      "mood": "happy",
       "id": 7
     },
     {
@@ -52,8 +45,8 @@
     {
       "date": "2020-02-11",
       "concepts": "Editing data in database.",
-      "entry": "Trying to update save btn functionality depending on if editing existing entry or creating a new entry.",
-      "mood": "fine",
+      "entry": "Trying to update save btn functionality depending on if editing existing entry or creating a new entry.\n\nFIXED! Needed my conditional for the save button to differentiate edit mode vs create mode to be in the global namespace for when edit button is not clicked on.. I put this new conditional in a function so that I could also use it in edit mode after edit button clicked. Wohooo!",
+      "mood": "happy",
       "id": 14
     }
   ]
