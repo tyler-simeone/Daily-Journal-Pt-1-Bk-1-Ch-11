@@ -87,17 +87,27 @@ containerEl.addEventListener("click", event => {
     }
 })
 
-// Search bar
-const searchBar = document.getElementById("searchBar")
-const searchVal = searchBar.value
-
+// Right now iterating through DB, but I think i need to go one deeper
+// & iterate through each object using a 'for of' for the matching input
 searchBar.addEventListener("keypress", event => {
+    event.preventDefault()
     if (event.charCode === 13) {
+        const searchVal = document.getElementById("searchBar").value
+
         API.getJournalEntries()
             .then(resp => {
-                resp.filter(entry => {
-                    if (entry.includes(searchVal)) {
-                        containerEl.innerHTML = entry
+                resp.forEach(entryObj => {
+                    // Holds array of values/properties in the DB obj
+                    const objVals = Object.values(entryObj)
+                    // console.log(objVals)
+                    // Looping through arr of DB obj values
+                    for (const val of objVals) {
+                        console.log(val)
+                        
+                        if (typeof val === "string" && val.includes(searchVal)) {
+                            containerEl.innerHTML = ""
+                            containerEl.innerHTML = DOM.renderSingleEntry(entryObj)
+                        }
                     }
                 })
             })

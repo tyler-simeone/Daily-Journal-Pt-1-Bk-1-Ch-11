@@ -27,7 +27,6 @@ const FACTORY = {
         const entryEl = document.querySelector("#journalEntry").value;
         const moodEl = document.querySelector("#journalMood").value;
         if (dateEl === "" || conceptsEl === "" || entryEl === "") {
-            event.preventDefault()
             window.alert("Please enter a value");
         } else {
             return {
