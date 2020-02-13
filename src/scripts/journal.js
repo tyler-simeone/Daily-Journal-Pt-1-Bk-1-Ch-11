@@ -104,8 +104,10 @@ searchBar.addEventListener("keypress", event => {
                     for (const val of objVals) {
                         console.log(val)
                         
+                        // So it's returning undefined to the container, so I think this conditional
+                        // is working. But maybe need to stringify 'val' first.... If not ask for help
                         if (typeof val === "string" && val.includes(searchVal)) {
-                            containerEl.innerHTML = ""
+                            // containerEl.innerHTML = ""
                             containerEl.innerHTML = DOM.renderSingleEntry(entryObj)
                         }
                     }
