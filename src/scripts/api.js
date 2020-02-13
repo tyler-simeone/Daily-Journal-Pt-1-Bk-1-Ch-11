@@ -1,10 +1,4 @@
-import {FACTORY, HTML} from "./factory.js"
-import {DOM, containerEl} from "./dom.js"
-
-/* 
-    This is strictly 'Helper' code. It is not this file's 
-    responsibility to execute the code.
-*/
+import { FACTORY } from "./factory.js"
 
 // Controls DB connections to my web page
 const API = {
@@ -35,13 +29,7 @@ const API = {
     // obj, then fetches DB obj via passed-in ID and replaces it with updated vals
     // from our new obj .... we want this to happen when 'record entry' btn clicked
     editJournalEntry(entryId) {   
-        // So i believe FACTORY.createEntry() already does this. Check later. Can clean this up if so.
-        const updatedObj = {
-            date: document.querySelector("#journalDate").value,
-            concepts: document.querySelector("#journalConcepts").value,
-            entry: document.querySelector("#journalEntry").value,
-            mood: document.querySelector("#journalMood").value
-        }
+        const updatedObj = FACTORY.createEntry()
 
         return fetch(`http://localhost:8088/entries/${entryId}`, {
             method: "PUT",

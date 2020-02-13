@@ -39,7 +39,9 @@
                     <option value="sad">sad</option>
                 </select>
             </fieldset>
-            <button id="save-entry">Record Journal Entry</button>
+            <button id="save-entry" class="saveEntry__btn">
+                Record Journal Entry
+            </button>
             <fieldset id="radioBtns">
                 <legend>Filter Entries by Mood</legend>
                 <input type="radio" name="moods" value="happy" class="radio1">
@@ -48,6 +50,10 @@
                 <label for="fine">Fine</label>
                 <input type="radio" name="moods" value="sad" class="radio3">
                 <label for="sad">Sad</label>
+            </fieldset>
+            <fieldset class="searchBar--right">
+                <label for="searchBar">Search Entries:</label>
+                <input type="text" id="searchBar" class="searchBar">
             </fieldset>
         </form>
         <article class="entryLog"></article>

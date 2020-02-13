@@ -70,22 +70,12 @@ containerEl.addEventListener("click", event => {
 })
 
 // EDIT req
-// ... Almost there.. the callback fn is repopulating the user interface to be edited, and the updated
-// entry is replacing the original, BUT... It's also appending a new object to the DB.. I KNOW WHY!
-// ... The save btn is running both the editJournalEntry method as well as the saveJournalEntry...
-// It can't differentiate with current code. This is where that hidden text input comes in.. 
-// That hidden input will have a value if in edit mode (thanks to DOM.journalEntriesEdit)..
-// But if posting a new entry that DOM method won't be invoked so hidden input will have no value,
-// That's how you differentiate!
 containerEl.addEventListener("click", event => {
     if (event.target.id.startsWith("editBtn")) {
         // Holds the same ID as the whole section container.. 
         const toEdit = event.target.id.split("--")[1]
 
         // Repopulate user interface to edit the section
-        // ... So if I click edit btn, the interface is repopulated,
-        // but when pg is refreshed, the data from that entry is still
-        // being emptied from the DB 
         API.getJournalEntry(toEdit)
             .then(resp => DOM.journalEntriesEdit(resp))
 
@@ -96,3 +86,36 @@ containerEl.addEventListener("click", event => {
         saveButtonClick(toEdit);
     }
 })
+
+// Right now iterating through DB, but I think i need to go one deeper
+// & iterate through each object using a 'for of' for the matching input
+searchBar.addEventListener("keypress", event => {
+    event.preventDefault()
+    if (event.charCode === 13) {
+        const searchVal = document.getElementById("searchBar").value
+
+        API.getJournalEntries()
+            .then(resp => {
+                resp.forEach(entryObj => {
+                    // Holds array of values/properties in the DB obj
+                    const objVals = Object.values(entryObj)
+                    // console.log(objVals)
+                    // Looping through arr of DB obj values
+                    for (const val of objVals) {
+                        console.log(val)
+                        
+                        // So it's returning undefined to the container, so I think this conditional
+                        // is working. But maybe need to stringify 'val' first.... If not ask for help
+                        if (typeof val === "string" && val.includes(searchVal)) {
+                            // containerEl.innerHTML = ""
+                            containerEl.innerHTML = DOM.renderSingleEntry(entryObj)
+                        }
+                    }
+                })
+            })
+    }
+})
+
+
+// TODO: Coding challenge 1: change save btn to update journal entry when in edit mode and change back 
+// to record journal entry after update has been sent, 2: when delete btn clicked display alert

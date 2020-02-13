@@ -48,6 +48,19 @@
       "entry": "Trying to update save btn functionality depending on if editing existing entry or creating a new entry.\n\nFIXED! Needed my conditional for the save button to differentiate edit mode vs create mode to be in the global namespace for when edit button is not clicked on.. I put this new conditional in a function so that I could also use it in edit mode after edit button clicked. Wohooo!",
       "mood": "happy",
       "id": 14
+    },
+    {
+      "date": "2020-02-11",
+      "concepts": "Have to make sad entry for filtering",
+      "entry": "Very sad... Like.....VERY ....",
+      "mood": "sad",
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
     }
   ]
 }
